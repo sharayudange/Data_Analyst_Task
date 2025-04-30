@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0910.0334                               -->
+<workbook original-version='18.1' source-build='2024.2.3 (20242.24.0910.0334)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='customer_orders+' inline='true' name='federated.0ytsq040l2517317nsezp15o7z0h' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='customer_orders' name='textscan.1oxs2ul1k3equg17j24xf1dcnh2n'>
+            <connection class='textscan' directory='C:/Users/Sharayu Dange/Downloads' filename='customer_orders.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1oxs2ul1k3equg17j24xf1dcnh2n' name='customer_orders.csv' table='[customer_orders#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='string' name='order_id' ordinal='0' />
+            <column datatype='integer' name='customer_id' ordinal='1' />
+            <column datatype='date' name='order_date' ordinal='2' />
+            <column datatype='real' name='order_amount' ordinal='3' />
+            <column datatype='string' name='shipping_address' ordinal='4' />
+            <column datatype='string' name='order_status' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1oxs2ul1k3equg17j24xf1dcnh2n' name='customer_orders.csv' table='[customer_orders#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='order_id' ordinal='0' />
+              <column datatype='integer' name='customer_id' ordinal='1' />
+              <column datatype='date' name='order_date' ordinal='2' />
+              <column datatype='real' name='order_amount' ordinal='3' />
+              <column datatype='string' name='shipping_address' ordinal='4' />
+              <column datatype='string' name='order_status' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1oxs2ul1k3equg17j24xf1dcnh2n' name='payments.csv' table='[payments#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='payment_id' ordinal='0' />
+              <column datatype='string' name='order_id' ordinal='1' />
+              <column datatype='date' name='payment_date' ordinal='2' />
+              <column datatype='real' name='payment_amount' ordinal='3' />
+              <column datatype='string' name='payment_method' ordinal='4' />
+              <column datatype='string' name='payment_status' ordinal='5' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[customer_id]' value='[customer_orders.csv].[customer_id]' />
+          <map key='[order_amount]' value='[customer_orders.csv].[order_amount]' />
+          <map key='[order_date]' value='[customer_orders.csv].[order_date]' />
+          <map key='[order_id (payments.csv)]' value='[payments.csv].[order_id]' />
+          <map key='[order_id]' value='[customer_orders.csv].[order_id]' />
+          <map key='[order_status]' value='[customer_orders.csv].[order_status]' />
+          <map key='[payment_amount]' value='[payments.csv].[payment_amount]' />
+          <map key='[payment_date]' value='[payments.csv].[payment_date]' />
+          <map key='[payment_id]' value='[payments.csv].[payment_id]' />
+          <map key='[payment_method]' value='[payments.csv].[payment_method]' />
+          <map key='[payment_status]' value='[payments.csv].[payment_status]' />
+          <map key='[shipping_address]' value='[customer_orders.csv].[shipping_address]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[order_id]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>order_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[customer_id]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>customer_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[order_date]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>order_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[order_amount]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>order_amount</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>shipping_address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[shipping_address]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>shipping_address</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[order_status]</local-name>
+            <parent-name>[customer_orders.csv]</parent-name>
+            <remote-alias>order_status</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[payment_id]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>payment_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[order_id (payments.csv)]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>order_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[payment_date]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>payment_date</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[payment_amount]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>payment_amount</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_method</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[payment_method]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>payment_method</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>payment_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[payment_status]</local-name>
+            <parent-name>[payments.csv]</parent-name>
+            <remote-alias>payment_status</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='First Purchase Date' datatype='date' name='[Calculation_920986128783691776]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [customer_id]: MIN([payment_date]) }' />
+      </column>
+      <column caption='Cohort Month' datatype='date' name='[Calculation_920986128784900097]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(DATETRUNC(&apos;month&apos;, [Calculation_920986128783691776]))' />
+      </column>
+      <column caption='Months Since First Purchase' datatype='integer' name='[Calculation_920986128785403906]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;month&apos;, [Calculation_920986128783691776], [payment_date])' />
+      </column>
+      <column caption='Customer Retention' datatype='integer' name='[Calculation_920986128786472963]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_920986128785403906] &gt;= 0 THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Retention Rate' datatype='real' name='[Calculation_920986128786948100]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_920986128786472963]) / COUNTD([customer_id])' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='customer_orders.csv' datatype='table' name='[__tableau_internal_object_id__].[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='payments.csv' datatype='table' name='[__tableau_internal_object_id__].[payments.csv_5206CC30E8634C749D455663988F7D06]' role='measure' type='quantitative' />
+      <column caption='Customer Id' datatype='integer' name='[customer_id]' role='dimension' type='ordinal' />
+      <column caption='Order Amount' datatype='real' name='[order_amount]' role='measure' type='quantitative' />
+      <column caption='Order Date' datatype='date' name='[order_date]' role='dimension' type='ordinal' />
+      <column caption='Order Id (Payments.Csv)' datatype='string' name='[order_id (payments.csv)]' role='dimension' type='nominal' />
+      <column caption='Order Id' datatype='string' name='[order_id]' role='dimension' type='nominal' />
+      <column caption='Order Status' datatype='string' name='[order_status]' role='dimension' type='nominal' />
+      <column caption='Payment Amount' datatype='real' name='[payment_amount]' role='measure' type='quantitative' />
+      <column caption='Payment Date' datatype='date' name='[payment_date]' role='dimension' type='ordinal' />
+      <column caption='Payment Id' datatype='string' name='[payment_id]' role='dimension' type='nominal' />
+      <column caption='Payment Method' datatype='string' name='[payment_method]' role='dimension' type='nominal' />
+      <column caption='Payment Status' datatype='string' name='[payment_status]' role='dimension' type='nominal' />
+      <column caption='Shipping Address' datatype='string' name='[shipping_address]' role='dimension' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/SHARAY~1/AppData/Local/Temp/TableauTemp/#TableauTemp_0ajod7k1deqs19137977h1a3tylv.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/30/2025 09:15:01 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='customer_orders.csv_50AE8621227345F885BEF1861DB8DACC' table='[Extract].[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='customer_orders.csv_50AE8621227345F885BEF1861DB8DACC' table='[Extract].[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]' type='table' />
+            <relation name='payments.csv_5206CC30E8634C749D455663988F7D06' table='[Extract].[payments.csv_5206CC30E8634C749D455663988F7D06]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[customer_id]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[customer_id]' />
+            <map key='[order_amount]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[order_amount]' />
+            <map key='[order_date]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[order_date]' />
+            <map key='[order_id (payments.csv)]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[order_id]' />
+            <map key='[order_id]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[order_id]' />
+            <map key='[order_status]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[order_status]' />
+            <map key='[payment_amount]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[payment_amount]' />
+            <map key='[payment_date]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[payment_date]' />
+            <map key='[payment_id]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[payment_id]' />
+            <map key='[payment_method]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[payment_method]' />
+            <map key='[payment_status]' value='[payments.csv_5206CC30E8634C749D455663988F7D06].[payment_status]' />
+            <map key='[shipping_address]' value='[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC].[shipping_address]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>order_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[order_id]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>order_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customer_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[customer_id]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>customer_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5300</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>order_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[order_date]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>order_date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2698</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>order_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[order_amount]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>order_amount</remote-alias>
+              <ordinal>3</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8215</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>shipping_address</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[shipping_address]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>shipping_address</remote-alias>
+              <ordinal>4</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>order_status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[order_status]</local-name>
+              <parent-name>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</parent-name>
+              <remote-alias>order_status</remote-alias>
+              <ordinal>5</ordinal>
+              <family>customer_orders.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[payment_id]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>payment_id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>payments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>order_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[order_id (payments.csv)]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>order_id</remote-alias>
+              <ordinal>7</ordinal>
+              <family>payments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6354</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[payment_date]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>payment_date</remote-alias>
+              <ordinal>8</ordinal>
+              <family>payments.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2699</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_amount</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[payment_amount]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>payment_amount</remote-alias>
+              <ordinal>9</ordinal>
+              <family>payments.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9808</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_method</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[payment_method]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>payment_method</remote-alias>
+              <ordinal>10</ordinal>
+              <family>payments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>payment_status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[payment_status]</local-name>
+              <parent-name>[payments.csv_5206CC30E8634C749D455663988F7D06]</parent-name>
+              <remote-alias>payment_status</remote-alias>
+              <ordinal>11</ordinal>
+              <family>payments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[payments.csv_5206CC30E8634C749D455663988F7D06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='customer_orders.csv' id='customer_orders.csv_50AE8621227345F885BEF1861DB8DACC'>
+            <properties context=''>
+              <relation connection='textscan.1oxs2ul1k3equg17j24xf1dcnh2n' name='customer_orders.csv' table='[customer_orders#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='order_id' ordinal='0' />
+                  <column datatype='integer' name='customer_id' ordinal='1' />
+                  <column datatype='date' name='order_date' ordinal='2' />
+                  <column datatype='real' name='order_amount' ordinal='3' />
+                  <column datatype='string' name='shipping_address' ordinal='4' />
+                  <column datatype='string' name='order_status' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='customer_orders.csv_50AE8621227345F885BEF1861DB8DACC' table='[Extract].[customer_orders.csv_50AE8621227345F885BEF1861DB8DACC]' type='table' />
+            </properties>
+          </object>
+          <object caption='payments.csv' id='payments.csv_5206CC30E8634C749D455663988F7D06'>
+            <properties context=''>
+              <relation connection='textscan.1oxs2ul1k3equg17j24xf1dcnh2n' name='payments.csv' table='[payments#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='payment_id' ordinal='0' />
+                  <column datatype='string' name='order_id' ordinal='1' />
+                  <column datatype='date' name='payment_date' ordinal='2' />
+                  <column datatype='real' name='payment_amount' ordinal='3' />
+                  <column datatype='string' name='payment_method' ordinal='4' />
+                  <column datatype='string' name='payment_status' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='payments.csv_5206CC30E8634C749D455663988F7D06' table='[Extract].[payments.csv_5206CC30E8634C749D455663988F7D06]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[order_id]' />
+              <expression op='[order_id (payments.csv)]' />
+            </expression>
+            <first-end-point object-id='customer_orders.csv_50AE8621227345F885BEF1861DB8DACC' />
+            <second-end-point object-id='payments.csv_5206CC30E8634C749D455663988F7D06' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Benton Sans Book'>Customer Retention by Cohort</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customer_orders+' name='federated.0ytsq040l2517317nsezp15o7z0h' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ytsq040l2517317nsezp15o7z0h'>
+            <column caption='First Purchase Date' datatype='date' name='[Calculation_920986128783691776]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [customer_id]: MIN([payment_date]) }' />
+            </column>
+            <column caption='Cohort Month' datatype='date' name='[Calculation_920986128784900097]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(DATETRUNC(&apos;month&apos;, [Calculation_920986128783691776]))' />
+            </column>
+            <column caption='Months Since First Purchase' datatype='integer' name='[Calculation_920986128785403906]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;month&apos;, [Calculation_920986128783691776], [payment_date])' />
+            </column>
+            <column caption='Customer Retention' datatype='integer' name='[Calculation_920986128786472963]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_920986128785403906] &gt;= 0 THEN 1 ELSE 0 END' />
+            </column>
+            <column caption='Retention Rate' datatype='real' name='[Calculation_920986128786948100]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_920986128786472963]) / COUNTD([customer_id])' />
+            </column>
+            <column caption='Customer Id' datatype='integer' name='[customer_id]' role='dimension' type='ordinal' />
+            <column caption='Payment Date' datatype='date' name='[payment_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_920986128785403906]' derivation='Sum' name='[sum:Calculation_920986128785403906:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_920986128786948100]' derivation='User' name='[usr:Calculation_920986128786948100:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_920986128784900097]' derivation='Year' name='[yr:Calculation_920986128784900097:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]' value='p0.00%' />
+            <format attr='cell-w' value='20' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]' palette='purple_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]' />
+              <size column='[federated.0ytsq040l2517317nsezp15o7z0h].[sum:Calculation_920986128785403906:qk]' />
+              <text column='[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.7999999523162842' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0ytsq040l2517317nsezp15o7z0h].[yr:Calculation_920986128784900097:ok]</cols>
+      </table>
+      <simple-id uuid='{FC385833-39A4-4D6D-ACB0-C15DB179BF26}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0ytsq040l2517317nsezp15o7z0h].[sum:Calculation_920986128785403906:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0ytsq040l2517317nsezp15o7z0h].[usr:Calculation_920986128786948100:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6A693261-5BDA-4610-8B5A-AC37B6BD2DF2}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAJQklEQVR4nO3by29baRnH8e+xndiOYydxLk2Tuq2TTDtt2qYdOh1BGRjBjJBKpxIwEhKC
+      FYh/gB1bFiwQW9Q9GxazQiPEANVA594qtJP7/e60dpzUdhLnYvuYxUBh007bqeOQ5/fZWY79
+      Pkf2N+f1ceKUy+UyIkZ5qj2ASDUpADFNAci+sjgzzuxS8uHtjUyaje3iFz4umZilWIZ7C1Ok
+      s/lH/lxpZ4OVtfWHt31fblyR5ycxeovJfCMvnwyxMD1KMlcikF9gfqeRE11xQqyztLpFT2cT
+      iZV1Jvrfp3zkJX7w+iXe+/gWZ1+JMvynt4m89D1ites49a0E3DzZXI5oSzN/ePsd3vruZT64
+      c49zfS9yofeEzgCyf9xfWuFY1xHC9V4+7Z/Ev7HARHKTznicu59+wEf9o7Syxl/fu8nsapHu
+      YzF6z5zGAwQ8kBz9AH9DB7nlMRY2A8wO3ubTW/+kvTXI6GKWeHcP7dF6Gls7mRq+C2gLJPvI
+      6YsXGHz/7wyMJWgIucys7BI71ERdwE9dfYTmkJfhxQzx2CF6urtoP9LB1PAILhBuaiabXuXk
+      qR6a24+yszJDsTZMU2MDfn+AQDBIbWmTVG6HSDhEKFQHgKPLoGKZzgBiWkU/BE8N3aYQilHY
+      SHHmzFk8jgPAwGcDhAMemo+eIhL0VnKELy25OM34zAKdPWfZvDdFrlTLme52BkcmaTocx7+7
+      yuLqFq9+/avUeJxqj/tIqaUZxqbn6eg+w1ZqhsyOj3MnOhgYnqDx0DE6GxyG59d49ZUL1R71
+      sRanR5heuM+JcxdZnviMUqCJ7kMhRmcSvHjqFBMjI/jqo1y60MuTvBoVPQMsLK4wOTnA2Pg4
+      86N3WFrb5MOPPmR8fJzE3CQbu24ll38uGlo7eDHewt1bt5lO5fFtLJEuhDjX28XI0Ch3R6aI
+      129xd/ZBtUd9rEjLYU51t/HZ7X4ml3MEtxPc3w7Sd6aHkaFRym6Zqempao/5hVo74hxt8nGn
+      /xOS+SCZ2THcyGG6j3aysLbLhQt9TI0M8aTvrIpvgU7EmplYWiW3lmJ9u8hyIlHpJZ+r5OwI
+      tyZyXPn2RRzHwePA5uoi774/wtUr3wLA63Fw3f0dc3p+jI9H1rjy+qV/H4dD/sEyf/7HAFev
+      vk5zSwuOs3/PYP8xM3Sb2XyYb1zownE8OA6kF8fpH1ukrzPAH995l++8+SZPuq+oaAAdR2LE
+      XzhDd0cLR+IvsDw1THssTjwep73zOHU1+/8jSDKVJuSHRKbAkQYvmzVt1OxkaGysY2Z+id6e
+      o4ymvZzvilZ71Me6n0oTDnpYWtvmaLOfjKeFukKGSEOImblFxsdGqfW43Evnqj3qYyXXcgTK
+      eR4UIjT6MgQPd5FfWyUc8DA9M0ugvoG56VlKT3hp5+FVoHw+T6lUquTsIvvOwwBc10VXRMUa
+      fQ8gpu3/TbhIBSkAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDT
+      FICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDT
+      FICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDT
+      FICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDT
+      FICYpgDENAUgpvmqPUClZNNZrv/id9Ue46nETsb40S9/XO0xTDmwAZRdl40H69Ue46lsreer
+      PYI52gKJaQpATFMAYpoCENMUgJimAMQ0BSCmHdjvAaxJjCywns5WfJ0XvnYar89b8XX2igI4
+      IOb6J1kcmKv4Ol2XTh6oALQFEtMUgJimAMQ0fQaQfW/rwQbbmc1nemxtfYBQa8Mj71cAsu+t
+      jC2x+MnEMz225WQnJ6985ZH3awskpikAMU0BiGkKQExTAGKargI9R2uba6yspwnWBCm6RbJb
+      WY41HyOZTXKooY1oKMrK+gprmw/oaDzMzMoskWAEr+Mlu5WlGCqRSqVoa2ur6nEkMymW0svU
+      +YOksmmi4SbCgXqS2RT1f2nj6rU3KZVKXL9+nddee43BwUF2dnbo6upibm6O8+fP09raSnt7
+      e1WPY3h+nI3lQdbbykxMTBCJRGhrayOZTHL58mWi0ejenQHcgksht7NXy1VFOBBmt7iLv8ZP
+      JBDGLZdJr6fxerxk8zkAUrnU52/4fJZ6fz35nTwlt0TJdbmXucfNmzcpFotVPY62hlYCtQGi
+      4SYaQhHW8+t4PB52iwW83s9/Zw4ODtLb2wuA67qUSiVWVlYoFAr09/fvi+PoPnycYF0d29vb
+      vPHGG4RCIYaGhiiXyyQSCWAPt0CeGg81Ef9eLVcVmc0Mfp+fncIOmXyWGo+PaH2UYqmI4zjk
+      tnK0hlspuv99Y5TLZY5EO4mGGmmLtOG6bhWP4HN3ZgbI72zhui4ODm65zG5xl2BtANd1WVpa
+      4uzZs8RiMUKhEO3t7UQiEa5du0ZPTw99fX24rku5XK7aMZTLZf525yZer5dYLMaNGzcoFAqc
+      Pn2aUqmE4zgkEgmccjWnrKBM6gG//dlvqj3GUznee5yf/vrnz/TYD39/Y0/+GvT7v/oJtYHa
+      iq/zvxY+HtMXYSKVoADENAUgpikAMU3fA8i+563xURN6tiuIvkDN4+9/pmcV2UOdF3vovNhT
+      kefWFkhMUwBimgIQ0xSAmKYPwQfEKz/8Ji+/9WrF16nxP/6qyv8bBXBA+Gr1Uj4LbYHENAUg
+      pikAMU0BiGkKQExTAGKaAhDTDuzFY6/Px+HujmqP8VSaO1uqPYI5B/af4kWehLZAYpoCENMU
+      gJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMUgJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMU
+      gJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMUgJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMU
+      gJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMUgJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMU
+      gJimAMQ0BSCmKQAxTQGIaQpATFMAYpoCENMUgJimAMQ0BSCmKQAxTQGIaQpATFMAYtq/ALYy
+      yui90TkxAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
