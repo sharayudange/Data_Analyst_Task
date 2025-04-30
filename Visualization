@@ -1,0 +1,52 @@
+- Customer Retention Analysis using Cohort Heatmap in Tableau
+
+   - Objective:
+      - To visualize how customer retention changes over time by cohort, using a heatmap that tracks repeat purchases across monthly intervals after each customer's first purchase.
+
+-  Data Source:
+    - File: customer_data.csv
+
+- Fields Used:
+
+   - Customer ID
+   - Payment Date
+
+
+- Key Calculated Fields:
+  - First Purchase Date
+       - { FIXED [Customer Id]: MIN([Payment Date]) }
+       - Purpose: Identifies when each customer made their first purchase.
+
+  - Cohort Month
+     - DATETRUNC('month', [First Purchase Date])
+       - Purpose: Groups customers into cohorts based on the month of their first purchase.
+
+ -  Months Since First Purchase
+    - DATEDIFF('month', [First Purchase Date], [Payment Date])
+    - Purpose: Calculates the number of months since each customer’s first purchase.
+
+- Customer Retention
+   -  IF [Months Since First Purchase] >= 0 THEN 1 ELSE 0 END
+   - Purpose: Flags valid transactions for retention tracking.
+
+- Retention Rate (Optional)
+- SUM([Customer Retention]) / COUNTD([Customer ID])
+- Purpose: Shows what portion of the cohort returned in each month.
+  - Visualization Type:
+     - Heatmap (Square Chart) in Tableau
+-  Steps to Create the Heatmap in Tableau:
+   - Drag Cohort Month to Rows.
+
+   - Drag Months Since First Purchase to Columns.
+
+    - Drag Retention Rate or Customer Retention to Color and Label.
+
+- How to Read the Visualization:
+ - Each row = a customer cohort (based on first purchase month).
+
+- Each column = a month after first purchase.
+
+- Each cell = number or percentage of customers from that cohort who returned in that month.
+
+- Darker or more intense colors = higher retention.
+
